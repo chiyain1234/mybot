@@ -20,6 +20,9 @@ const { handleAnalyze } = require('./messages/analyze');
 const { handleBadAnalyze } = require('./messages/badanalyze');
 const { Client: UnbClient } = require('unb-api');
 const { serve } = require('@hono/node-server');
+
+const { startHealthCheckCron } = require('./cron');
+const { serve } = require('@hono/node-server');
 const healthCheckServer = require('./server');
 
 const unb = new UnbClient(process.env.UNB_TOKEN);
@@ -91,4 +94,6 @@ serve({
   fetch: healthCheckServer.fetch,
   port: 8000,
 });
+
+startHealthCheckCron();
 module.exports = client;
