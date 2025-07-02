@@ -1,0 +1,25 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@discordjs/builders": "^1.8.2",
+    "@discordjs/rest": "^2.0.1",
+    "discord-command-cooldown": "^1.0.9",
+    "discord.js": "^13.17.1",
+    "groq-sdk": "^0.19.0",
+    "unb-api": "^1.4.0",
+    "crypto": "^1.0.1",
+    "sqlite3": "^5.1.7"
+  },
+  "engines": {
+    "node": "16.14.2"
+  }
+}
