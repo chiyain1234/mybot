@@ -1,7 +1,6 @@
 const cron = require('node-cron');
-const { PORT } = require('./config');
 
-const HEALTH_CHECK_URL = process.env.HEALTH_CHECK_URL || `http://localhost:${PORT}`;
+const HEALTH_CHECK_URL = process.env.HEALTH_CHECK_URL || `http://localhost:8000`;
 
 // 10分ごとにヘルスチェックを実行
 function startHealthCheckCron() {
