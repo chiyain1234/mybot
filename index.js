@@ -19,6 +19,8 @@ const { handleSumCommand } = require('./messages/sum');
 const { handleAnalyze } = require('./messages/analyze');
 const { handleBadAnalyze } = require('./messages/badanalyze');
 const { Client: UnbClient } = require('unb-api');
+const { serve } = require('@hono/node-server');
+const healthCheckServer = require('./server');
 
 const unb = new UnbClient(process.env.UNB_TOKEN);
 
@@ -85,5 +87,8 @@ client.queues = new Collection();
         console.error("Please Provide A Valid Bot Token In The Environment Variables Or Config File!");
     }
 })();
-
+serve({
+  fetch: healthCheckServer.fetch,
+  port: 8000,
+});
 module.exports = client;
