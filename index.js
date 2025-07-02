@@ -22,7 +22,6 @@ const { Client: UnbClient } = require('unb-api');
 const { serve } = require('@hono/node-server');
 
 const { startHealthCheckCron } = require('./cron');
-const { serve } = require('@hono/node-server');
 const healthCheckServer = require('./server');
 
 const unb = new UnbClient(process.env.UNB_TOKEN);
